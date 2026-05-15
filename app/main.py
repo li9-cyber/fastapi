@@ -9,15 +9,10 @@ import time
 from sqlalchemy.orm import Session
 from . import models
 from .database import engine, SessionLocal
-
+from .database import get_db
 models.Base.metadata.create_all(bind = engine)  #get the metadata in baseclass and then create table
 
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+
 
 app = FastAPI()
 

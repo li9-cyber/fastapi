@@ -1,0 +1,30 @@
+{
+  // 1. 開啟打字時的基礎大腦
+  "editor.quickSuggestions": {
+    "other": "on",
+    "comments": "off",
+    "strings": "off"
+  },
+
+  // 2. 這是你能打出 status.xxx 的核心！確保打「.」會觸發提示
+  "editor.suggestOnTriggerCharacters": true,
+
+  // 3. 【只留精華】確保 Enum(列舉)、Constant(常數)、Property(屬性) 會顯示
+  "editor.suggest.showEnums": true,
+  "editor.suggest.showConstants": true,
+  "editor.suggest.showProperties": true,
+
+  // 4. 【擋掉垃圾】關閉普通的單字、關鍵字 (這樣你打 c 就不會再跑出 class)
+  "editor.suggest.showWords": false,
+  "editor.suggest.showKeywords": false,
+
+  // 5. 關閉旁邊那個超大的、會擋住視線的詳細說明文字框
+  "editor.suggest.showDetails": false,
+  
+  // 6. 關閉滑鼠游標停在代碼上的煩人懸浮框
+  "editor.hover.enabled": false,
+  
+  // 7. 關閉打括號 () 時彈出的參數說明框
+  "editor.parameterHints.enabled": false,
+  "editor.inlineSuggest.enabled": false,
+}
