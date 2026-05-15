@@ -17,12 +17,6 @@
   // 4. 【擋掉垃圾】關閉普通的單字、關鍵字 (這樣你打 c 就不會再跑出 class)
   "editor.suggest.showWords": false,
   "editor.suggest.showKeywords": false,
-
-  // 5. 關閉旁邊那個超大的、會擋住視線的詳細說明文字框
-  "editor.suggest.showDetails": false,
-  
-  // 6. 關閉滑鼠游標停在代碼上的煩人懸浮框
-  "editor.hover.enabled": false,
   
   // 7. 關閉打括號 () 時彈出的參數說明框
   "editor.parameterHints.enabled": false,
