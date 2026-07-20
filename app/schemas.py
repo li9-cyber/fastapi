@@ -19,6 +19,8 @@ class PostUpdate(PostBase):
 class Response(PostBase):
     id: int
     created_at: datetime
+    owner_id: int
+    owner: UserOut
 
 
 
@@ -37,4 +39,13 @@ class UserLogin(BaseModel):
     email: EmailStr
     password: str
 
+
+#### token schema ############
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+class TokenData(BaseModel):
+    id: Optional[int] = None
 
