@@ -1,2 +1,3 @@
 fastapi_practice_environment/
 __pycache__/
+.env
