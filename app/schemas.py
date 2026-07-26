@@ -35,6 +35,11 @@ class UserOut(BaseModel):
     created_at: datetime
 
 
+class PostOut(BaseModel):
+    Post: Response
+    votes: int
+
+
 
 class UserLogin(BaseModel):
     email: EmailStr

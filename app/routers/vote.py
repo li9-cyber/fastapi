@@ -19,6 +19,7 @@ def vote(vote: schemas.Vote, db: Session = Depends(get_db), current_user: int = 
 
     if not post_query:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Vote {vote.post_id} does not exist")
+    
     if vote.dir == 1:
         if vote_found:
             raise HTTPException(status_code=status.HTTP_409_CONFLICT, 
