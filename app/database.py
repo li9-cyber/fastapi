@@ -5,11 +5,22 @@ import psycopg
 from psycopg.rows import dict_row
 import time
 from .config import settings
+from sqlalchemy.engine import URL
 
 
 
 
-SQLALCHEMY_DATABASE_URL = f'''postgresql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}'''
+is_cloud_sql = settings.database_hostname.startswith("/cloudsql/")
+
+SQLALCHEMY_DATABASE_URL = URL.create(
+    drivername="postgresql+psycopg",
+    username=settings.database_username,
+    password=settings.database_password,
+    host=None if is_cloud_sql else settings.database_hostname,
+    port=None if is_cloud_sql else int(settings.database_port),
+    database=settings.database_name,
+    query={"host": settings.database_hostname} if is_cloud_sql else {},
+)
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL) # same as connection
 
