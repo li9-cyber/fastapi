@@ -1,0 +1,18 @@
+# Do not upload gcloud/Git metadata.
+.gcloudignore
+.git
+.gitignore
+
+# Reuse the local-only rules from .gitignore.
+#!include:.gitignore
+
+# Local development and editor files.
+.agents/
+.vscode/
+AGENTS.md
+
+# Docker is used locally only; Cloud Run source deploy uses buildpacks.
+.dockerignore
+Dockerfile*
+docker-compose*.yml
+docker-compose*.yaml
